@@ -1,5 +1,6 @@
 package org.example.JuliethTuberquia;
 
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,6 +17,8 @@ public class MenuPrincipal {
         Scanner keyentry = new Scanner(System.in);
         Integer MenuPrincipal= null;
         ArrayList<Object> empleados = new ArrayList<>();
+        ArrayList<Object> platos = new ArrayList<>();
+
 
         //menu
         System.out.println("\n********************************************");
@@ -34,21 +37,49 @@ public class MenuPrincipal {
             try {
                if (MenuPrincipal == 1){
                    System.out.print("Digita el ID del empleado: ");
+                   keyentry.nextLine();
                    diccionario.put("ID", keyentry.nextInt());
 
                    System.out.print("Digita el nombre del empleado: ");
+                   keyentry.nextLine();
                    diccionario.put("Nombre", keyentry.nextLine());
 
                    System.out.print("Digita la fecha de nacimiento del empleado: ");
                    diccionario.put("FechaNacimiento", keyentry.nextFloat());
 
                    System.out.print("Digita el cargo del empleado: ");
+                   keyentry.nextLine();
                    diccionario.put("Cargo", keyentry.nextLine());
 
                    System.out.print("Digita el salario del empleado: ");
+                   keyentry.nextLine();
                    diccionario.put("Salario", keyentry.nextFloat());
+                   empleados.add(diccionario);
+                   System.out.println(diccionario);
 
-                }
+                } else if (MenuPrincipal==2) {
+                   System.out.print("Digita el ID del plato: ");
+                   keyentry.nextLine();
+                   diccionario.put("ID", keyentry.nextInt());
+
+                   System.out.print("Digita el nombre del plato: ");
+                   keyentry.nextLine();
+                   diccionario.put("Nombre", keyentry.nextLine());
+
+                   System.out.print("Digita los ingredientes: ");
+                   keyentry.nextLine();
+                   diccionario.put("Ingredientes", keyentry.nextLine());
+
+                   System.out.print("Digita el precio del plato: ");
+                   keyentry.nextLine();
+                   diccionario.put("Precio", keyentry.nextFloat());
+                   platos.add(diccionario);
+                   System.out.println(diccionario);
+                   System.out.println("Oprime enter para ver el resultado");
+                   break;
+
+
+               }
             } catch(Exception error){
                 System.out.println(error.getMessage());
             }
